@@ -9,7 +9,8 @@ export default class Todos extends Component {
                 {
                     value => {
                         //destructuring
-                        return <Todo></Todo>
+                        const { todos } = value
+                        return todos.map(todos => <Todo todo={todos} key={todos.id}></Todo>)
                     }
                 }
             </Consumer>
