@@ -8,3 +8,4 @@ Fullstack with MERN todo app in react
 
 #### MongoDB: A document-based open source database.
 #### Express: A web application framework for Node.js
+#### React: A javascript front-end library for building user interface.
