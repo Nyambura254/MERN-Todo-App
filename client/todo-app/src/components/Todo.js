@@ -8,7 +8,10 @@ export default class Todo extends Component {
     }
     toggle = (id, dispatch) => {
         dispatch({ type: "TOGGLE", payload: id })
-    };
+    }
+    remove = (id, dispatch) => {
+        dispatch({ type: "REMOVE", payload: id })
+    }
     render() {
         //destructuring 
         const { title } = this.props.todo
@@ -17,10 +20,10 @@ export default class Todo extends Component {
 
                 //destructuring 
                 const { dispatch } = value
-                return <h3 className="text-dark text-center p-1 bg-light border-bottom" style={this.style()}>
-                    <i className="far fa-times-circle fa-sm float-left m-1 text-danger"></i>{title}
+                return <h4 className="text-dark text-center p-1 bg-light border-bottom" style={this.style()}>
+                    <i className="far fa-times-circle fa-sm float-left m-1 text-danger" onClick={this.remove.bind(this.id, dispatch)}></i>{title}
                     <input type="checkbox" className="m-2 float-right" onChange={this.toggle.bind(this.id, dispatch)}></input>
-                </h3>
+                </h4>
             }}
             </Consumer>
 
