@@ -12,37 +12,42 @@ const reducer = (prevState, action) => {
                 }
                 )
             }
-            export class Provider extends Component {
-                state = {
-                    todos: [
+        default:
+            return prevState
+    }
+}
 
-                        {
-                            id: 1,
-                            title: "React In action",
-                            complete: false
-                        },
-                        {
-                            id: 2,
-                            title: " MERN App",
-                            complete: false
-                        },
-                        {
-                            id: 3,
-                            title: "Axios HTTP",
-                            complete: false
-                        }
+export class Provider extends Component {
+    state = {
+        todos: [
 
-                    ],
-                    //to handle complete checkbox with action object
-                    dispatch: (action) => this.setState(prevState => reducer(prevState, action))
-                }
-                render() {
-                    return (
-                        <Context.Provider value={this.state}>
-                            {this.props.children}
-
-                        </Context.Provider>
-                    )
-                }
+            {
+                id: 1,
+                title: "React In action",
+                complete: false
+            },
+            {
+                id: 2,
+                title: " MERN App",
+                complete: false
+            },
+            {
+                id: 3,
+                title: "Axios HTTP",
+                complete: false
             }
-            export const Consumer = Context.Consumer;
+
+        ],
+        //to handle complete checkbox with action object
+        dispatch: (action) => this.setState(prevState => reducer(prevState, action))
+    }
+    render() {
+        return (
+            <Context.Provider value={this.state}>
+                {this.props.children}
+
+            </Context.Provider>
+        )
+    }
+}
+export const Consumer = Context.Consumer;
