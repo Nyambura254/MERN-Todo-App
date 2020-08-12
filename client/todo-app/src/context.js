@@ -12,7 +12,7 @@ export class Provider extends Component {
             },
             {
                 id: 2,
-                title: "This a complete MERN App",
+                title: " MERN App",
                 complete: false
             },
             {
@@ -21,7 +21,9 @@ export class Provider extends Component {
                 complete: false
             }
 
-        ]
+        ],
+        //to handle complete checkbox
+        dispatch: (action) => this.setState(prevState => reducer(prevState, action))
     }
     render() {
         return (
