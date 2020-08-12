@@ -7,3 +7,4 @@ Fullstack with MERN todo app in react
 ### The MERN stack consists of the following technologies
 
 #### MongoDB: A document-based open source database.
+#### Express: A web application framework for Node.js
