@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Consumer } from '../context';
+import axios from 'axios';
 
 export default class Todo extends Component {
     style = () => {
@@ -10,7 +11,9 @@ export default class Todo extends Component {
         dispatch({ type: "TOGGLE", payload: id })
     }
     remove = (id, dispatch) => {
-        dispatch({ type: "REMOVE", payload: id })
+        axios.delete('/todos/${id')
+            .then(() => dispatch({ type: "REMOVE", payload: id }))
+
     }
     render() {
         //destructuring 
