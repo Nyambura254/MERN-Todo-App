@@ -33,11 +33,15 @@ app.get("/todos", (req, res) => {
     Todo.find().then(todo => res.json(todo))
 })
 
-app.post('todos', (req, res) => {
+app.post('/todos', (req, res) => {
     const newTodo = new Todo({
         title: req.body.title
     })
     newTodo.save().then(todo => res.json(todo))
+})
+app.delete('/todos:id', (req, res) => {
+    Todo.findByIdAndDelete(re.params.id)
+        .then(() => res.json({ remove: true }))
 })
 
 app.listen(5000, () => {
