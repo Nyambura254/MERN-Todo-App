@@ -6,7 +6,9 @@
     "scripts": {
         "test": "echo\"Error: no test specified\"&& exit 1",
         "start": "node server.js",
-        "server": "nodemon server.js"
+        "server": "nodemon server.js",
+        "client": "cd..&& cd client && yarn start",
+        "app": "concurrently\"yarn run server\"\"yarn run client"
     },
     "dependencies": {
         "concurrently": "^5.3.0",
