@@ -14,15 +14,15 @@ export default class Todo extends Component {
     }
     render() {
         //destructuring 
-        const { title } = this.props.todo
+        const { title, _id } = this.props.todo
         return (
             <Consumer>{value => {
 
                 //destructuring 
                 const { dispatch } = value
                 return <h4 className="text-dark text-center p-1 bg-light border-bottom" style={this.style()}>
-                    <i className="far fa-times-circle fa-sm float-left m-1 text-danger" onClick={this.remove.bind(this.id, dispatch)}></i>{title}
-                    <input type="checkbox" className="m-2 float-right" onChange={this.toggle.bind(this.id, dispatch)}></input>
+                    <i className="far fa-times-circle fa-sm float-left m-1 text-danger" onClick={this.remove.bind(this._id, dispatch)}></i>{title}
+                    <input type="checkbox" className="m-2 float-right" onChange={this.toggle.bind(this._id, dispatch)}></input>
                 </h4>
             }}
             </Consumer>
