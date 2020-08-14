@@ -9,7 +9,7 @@ const reducer = (prevState, action) => {
         case "TOGGLE":
             return {
                 todos: prevState.todos.map(todos => {
-                    if (todos.id === action.payload) { todos.complete = !todos.complete };
+                    if (todos._id === action.payload) { todos.complete = !todos.complete };
                     return todos
                 }
                 )
