@@ -16,7 +16,7 @@ const reducer = (prevState, action) => {
             }
         case "REMOVE":
             return {
-                todos: prevState.todos.filter(todo => todo.id !== action.payload)
+                todos: prevState.todos.filter(todo => todo._id !== action.payload)
             }
         case "ADD":
             return {
